@@ -1,15 +1,21 @@
 {
-  "name": "unitarias-nodejs",
-  "version": "1.0.0",
-  "description": "## express + jest",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "express": "^4.18.2"
-  }
+	"name": "unitarias-nodejs",
+	"version": "1.0.0",
+	"description": "## express + jest",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"tsc": "tsc"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/express": "^4.17.17",
+		"@types/node": "^18.16.3",
+		"express": "^4.18.2",
+		"nodemon": "^2.0.22",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.0.4"
+	}
 }
