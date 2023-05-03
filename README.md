@@ -12,6 +12,14 @@ crear un proyecto desde cero
 
     npm run tsc -- --init
 
+librería de pruebas jest
+
+    npm i jest ts-jest -D
+    npm i @types/jest -D
+
+    npm run ts-jest config:init
+    # o #npx ts-jest config:init
+
 ## iniciar proyecto
 
     npm i
