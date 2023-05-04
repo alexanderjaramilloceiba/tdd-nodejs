@@ -24,3 +24,9 @@ librería de pruebas jest
 
     npm i
     npm start
+
+## Taller
+
+Para comenzar con nuestro [taller de TDD](https://github.com/alexanderjaramilloceiba/tdd-nodejs/tree/workshop) se pueden seguir los pasos para crear un proyecto desde cero e instalar la [librería jest](https://jestjs.io/) para pruebas o clonar este repositorio para trabajar en la rama master
+
+    git clone https://github.com/alexanderjaramilloceiba/tdd-nodejs.git
