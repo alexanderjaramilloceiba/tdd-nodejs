@@ -22,7 +22,11 @@ test("sumar I y I", () => {
 
     `npm run test`
 
-[Siguiente Tarea](https://github.com/alexanderjaramilloceiba/tdd-nodejs/tree/workshop-detail/2/workshop)
+5. Antes de pasar a la siguiente tarea, pensemos...
+    - **¿Por qué falla?**
+    - ¿Cuál es el mínimo código posible para que satisfaga la prueba?
+
+[Siguiente Tarea](https://github.com/alexanderjaramilloceiba/tdd-nodejs/tree/workshop-detail/3/workshop)
 
 [Ceiba Software House S.A.S. © 2016](https://www.ceiba.com.co/)
 
