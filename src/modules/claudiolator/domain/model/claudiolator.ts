@@ -3,6 +3,9 @@ export class Claudiolator {
 		if (romanNumeral1 == "I" && romanNumeral2 == "I") {
 			return "II";
 		}
-		return "III";
+		if (romanNumeral1 == "I" && romanNumeral2 == "II") {
+			return "III";
+		}
+		return "IV";
 	}
 }
