@@ -1,5 +1,9 @@
+import { DecimalConverter } from "./decimal-converter";
+
 export class Claudiolator {
-	add(romanNumeral1: string, romanNumeral2: string): any {
+	constructor(private readonly decimalConverter: DecimalConverter<string>) {}
+
+	add(romanNumeral1: string, romanNumeral2: string): string {
 		if (romanNumeral1 == "I" && romanNumeral2 == "I") {
 			return "II";
 		}

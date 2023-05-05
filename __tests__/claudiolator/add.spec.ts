@@ -1,10 +1,12 @@
 import { Claudiolator } from "../../src/modules/claudiolator/domain/model/claudiolator";
+import { DecimalConverter } from "../../src/modules/claudiolator/domain/model/decimal-converter";
 
 describe(Claudiolator.name, () => {
 	let claudiolator: Claudiolator;
+	let decimalConverter: DecimalConverter<string>;
 	beforeEach(() => {
 		// Jest will wait for this promise to resolve before running tests.
-		claudiolator = new Claudiolator();
+		claudiolator = new Claudiolator(decimalConverter);
 	});
 
 	describe.each([
