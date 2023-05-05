@@ -26,7 +26,7 @@ test("sumar I y I", () => {
     - **¿Por qué falla?**
     - ¿Cuál es el mínimo código posible para que satisfaga la prueba?
 
-[Siguiente Tarea](https://github.com/alexanderjaramilloceiba/tdd-nodejs/tree/workshop-detail/3/workshop)
+**[Siguiente Tarea](../../tree/workshop-detail/3/workshop)**
 
 [Ceiba Software House S.A.S. © 2016](https://www.ceiba.com.co/)
 
