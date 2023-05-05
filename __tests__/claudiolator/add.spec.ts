@@ -7,24 +7,19 @@ describe(Claudiolator.name, () => {
 		claudiolator = new Claudiolator();
 	});
 
-	test("sumar I y I", () => {
-		// Act
-		const result = claudiolator.add("I", "I");
-		// Assert
-		expect(result).toBe("II");
-	});
-
-	test("sumar I y II", () => {
-		// Act
-		const result = claudiolator.add("I", "II");
-		// Assert
-		expect(result).toBe("III");
-	});
-
-	test("sumar II y II", () => {
-		// Act
-		const result = claudiolator.add("II", "II");
-		// Assert
-		expect(result).toBe("IV");
-	});
+	describe.each([
+		["I", "I", "II"],
+		["I", "II", "III"],
+		["II", "II", "IV"],
+	])(
+		"sumar %s y %s",
+		(romanNumeral1: string, romanNumeral2: string, expected: string) => {
+			test(`retorna ${expected}`, () => {
+				// Act
+				const result = claudiolator.add(romanNumeral1, romanNumeral2);
+				// Assert
+				expect(result).toBe(expected);
+			});
+		}
+	);
 });
