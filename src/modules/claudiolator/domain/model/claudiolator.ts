@@ -4,12 +4,11 @@ export class Claudiolator {
 	constructor(private readonly decimalConverter: DecimalConverter<string>) {}
 
 	add(romanNumeral1: string, romanNumeral2: string): string {
-		if (romanNumeral1 == "I" && romanNumeral2 == "I") {
-			return "II";
-		}
-		if (romanNumeral1 == "I" && romanNumeral2 == "II") {
-			return "III";
-		}
-		return "IV";
+		const num1 = this.decimalConverter.from(romanNumeral1);
+		const num2 = this.decimalConverter.from(romanNumeral2);
+
+		const sum = num1 + num2;
+
+		return this.decimalConverter.to(sum);
 	}
 }
