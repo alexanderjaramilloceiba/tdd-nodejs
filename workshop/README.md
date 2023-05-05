@@ -48,7 +48,7 @@ Veamos:
 
 2. Correr las pruebas y validar si la prueba ya pasa (Verde)
 
-    `npm run test`
+    `npm run test`\
     ![Resultado de solución VSCode](/workshop/ResultadoPruebasFnNotImpl.png "Resultado Quick Fix")
 
 3. Corregir método `add` cambiando el `throw` por un `return` con el resultado esperado
@@ -61,7 +61,7 @@ Veamos:
 
 4. Correr las pruebas y validar que la prueba, <span style="color:#13D162; font-style:italic">ya pasa</span>
 
-    `npm run test`
+    `npm run test`\
     ![Resultado verde](/workshop/ResultadoPruebasVerde.png "Resultado Pruebas Verde")
 
 5. Antes de pasar a la siguiente tarea, pensemos...
