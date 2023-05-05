@@ -1,68 +1,69 @@
 # TDD
 
-## Tarea 5: Siguiente Prueba
+## Tarea 6: Refactoring de pruebas
 
-En este punto, si todavía estamos aprendiendo TDD, deseamos poder escribir más código para producción.
-Recordemos que una regla, nos dice que no debemos escribir código para producción, hasta que haya primero un test que falle.
+1.  Antes de continuar, hagamos un pequeño refactoring en las pruebas. Pero antes de comenzar, los invito a reflexionar sobre lo siguiente:
 
-1. ¿Cuál sería un siguiente test? (hagamos que falle)
+    -   Si notamos, el arrange en las 3 pruebas que tenemos es igual en cada una de ellas
+    -   En las 3 pruebas, estamos probando el mismo método de la misma clase
+    -   Veamos en el siguiente paso qué nos ofrece jest para esto
+
+2.  Para reutilizar algunos pasos previos a cada prueba, podemos hacer uso de [`beforeEach`](https://jestjs.io/docs/api#beforeeachfn-timeout)
 
     ```javascript
-    test("sumar II y II"...
+    let claudiolator: Claudiolator;
+    beforeEach(() => {
+    	// Jest will wait for this promise to resolve before running tests.
+    	claudiolator = new Claudiolator();
+    });
     ```
 
-    ![Resultado Rojo Test 2](/workshop/2-SegundoTestQueFalle.png "Resultado Pruebas Rojo")
+    <span style="color:#C9514B; font-style:italic">¿falla?</span>
+    no, continuemos
 
-2. ¿Cuál es el mínimo código que satisface la prueba?
+3.  Para crear un bloque que agrupe las pruebas relacionadas, podemos utilizar [`describe`](https://jestjs.io/docs/api#describename-fn)
 
     ```javascript
-    export class Claudiolator {
-    	add(arg0: string, arg1: string): any {
-    		if (arg0 == "I" && arg1 == "I") {
-    			return "II";
-    		}
-    		return "III";
+    describe(Claudiolator.name, () => {
+    	/* movemos aquí nuestras pruebas */
+    });
+    ```
+
+4.  Incluso, podemos refactorizar un poco más nuestras pruebas
+
+    -   Analicemos qué es lo que se repite en cada prueba y qué es lo que cambia (principio de refactoring)
+    -   El principio de refactoring, nos dice, que creemos una función que tenga lo que está igual y parametrizamos lo que cambia
+    -   Para lo anterior, podemos hacer uso de [`describe.each`](https://jestjs.io/docs/api#describeeachtablename-fn-timeout)
+
+        ```javascript
+        describe.each(params)(testDescription, (...testParams) => {
+        	/* contenido de lo que no cambia */
+        });
+        ```
+
+    Así:
+
+    ```javascript
+    describe.each([
+    	["I", "I", "II"],
+    	["I", "II", "III"],
+    	["II", "II", "IV"],
+    ])(
+    	"sumar %s y %s",
+    	(romanNumeral1: string, romanNumeral2: string, expected: string) => {
+    		test(`retorna ${expected}`, () => {
+    			// Act
+    			const result = claudiolator.add(romanNumeral1, romanNumeral2);
+    			// Assert
+    			expect(result).toBe(expected);
+    		});
     	}
-    }
+    );
     ```
 
-3. ¿Qué podemos refactorizar?
-    > tal vez los nombres de los argumentos del método `add`?
-4. ¿Qué mas probar para dar el siguiente paso?
+    ![Resultado tests agrupados](/workshop/refactoring-tests.png "Resultado Pruebas Agrupadas")
 
-    ```javascript
-    test("sumar II y II"...
-
-    ```
-
-    <span style="color:#C9514B; font-style:italic">¿falla?</span>, entonces podemos crear un código mínimo nuevo que satisfaga la prueba
-
-5. ¿Cómo podemos satisfacer solo lo que falla?
-
-    ```javascript
-    add(romanNumeral1: string, romanNumeral2: string): any {
-    	if (romanNumeral1 == "I" && romanNumeral2 == "I") {
-    		return "II";
-    	}
-    	if (romanNumeral1 == "I" && romanNumeral2 == "II") {
-    		return "III";
-    	}
-    	return "IV";
-    }
-    ```
-
-    ¿Y Ahora qué hacemos?\
-    ¿Nos vamos a llenar de condicionales?\
-    ¿Vemos algún patrón que nos permita reducir, reutilizar, optimizar nuestro código?
-
-    **¿Hay una forma simple de sumar IV+CIX que conozcamos?**
-
-    Vamos a lo que conocemos\
-    ¿Qué tal si **convertimos** los número **romanos a decimales**, realizamos la operación de suma y luego convertimos nuevamente el resultado decimal a romano?
-
-    Lo trabajaremos en la siguiente tarea
-
-**[Siguiente Tarea](../../../../tree/workshop-detail/6/workshop)**
+    **[Siguiente Tarea](../../../../tree/workshop-detail/7/workshop)**
 
 [Ceiba Software House S.A.S. © 2016](https://www.ceiba.com.co/)
 
