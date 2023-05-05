@@ -1,8 +1,12 @@
 import { Claudiolator } from "../../src/modules/claudiolator/domain/model/claudiolator";
 
+let claudiolator: Claudiolator;
+beforeEach(() => {
+	// Jest will wait for this promise to resolve before running tests.
+	claudiolator = new Claudiolator();
+});
+
 test("sumar I y I", () => {
-	// Arrange
-	const claudiolator = new Claudiolator();
 	// Act
 	const result = claudiolator.add("I", "I");
 	// Assert
@@ -10,8 +14,6 @@ test("sumar I y I", () => {
 });
 
 test("sumar I y II", () => {
-	// Arrange
-	const claudiolator = new Claudiolator();
 	// Act
 	const result = claudiolator.add("I", "II");
 	// Assert
@@ -19,8 +21,6 @@ test("sumar I y II", () => {
 });
 
 test("sumar II y II", () => {
-	// Arrange
-	const claudiolator = new Claudiolator();
 	// Act
 	const result = claudiolator.add("II", "II");
 	// Assert
