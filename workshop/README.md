@@ -40,7 +40,7 @@ Fuente:\
 Si necesita más información, incluyendo los pasos requeridos para sumar, vaya a\
 [Wikipedia: Numeración Romana](https://es.wikipedia.org/wiki/Numeraci%C3%B3n_romana)
 
-**[Siguiente Tarea](https://github.com/alexanderjaramilloceiba/tdd-nodejs/tree/workshop-detail/2/workshop)**
+**[Siguiente Tarea](../../tree/workshop-detail/2/workshop)**
 
 [Ceiba Software House S.A.S. © 2016](https://www.ceiba.com.co/)
 
