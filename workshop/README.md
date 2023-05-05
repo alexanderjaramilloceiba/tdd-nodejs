@@ -1,77 +1,52 @@
 # TDD
 
-## Hablemos un poco de TDD
+## Tarea 4: Refactor
 
-Siempre piensa en QUE necesita y luego elabora planes para para llevarlo a cabo, el COMO y como valor agregado con TDD la prueba ya queda escrita y será sumada a las demás pruebas y estas serán ejecutadas, en forma de regresión, cada vez que queramos hacer una compilación
+Necesitamos realizar pequeños pasos que ayuden a mejorar nuestro código, con foco en que sea limpio, legible y eficiente
 
-Las pruebas resultantes son una muy buena fuente para entender el código incluso mejor que cualquier documentación
-
-## Las 3 reglas del TDD
-
-Habrá quizá muchas otras pero las 3 reglas de [Robert C. Martin](http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd) son bastante buenas para saber cómo va ese TDD. Y son estas:
-
-> No está permitido escribir ningún código de producción, a menos que sea para pasar una prueba unitaria fallida.
-
-> No está permitido escribir nada más en una prueba unitaria que la que sea suficiente para fallar.
-
-> No está permitido escribir más código de producción que el suficiente para pasar la prueba unitaria fallida.
-
-## Tarea 3: Pasemos de rojo (RED) a verde (GREEN)
-
-Seleccionado el criterio de aceptación más simple que se pueda y traducido a una prueba unitaria, debemos comprobar que la prueba falle, de lo contrario, hay que sobreescribir la prueba
-
-### El Ciclo Red-Green-Refactor
-
-<span style="color:#C9514B; font-style:italic">Rojo:</span> hacer que la prueba falle (Tarea 2)
-
-<span style="color:#13D162; font-style:italic">Verde:</span> hacer que la prueba pase (Tarea 3)
-
-<span style="color:#51D6FF; font-style:italic">Refactor:</span> aplicar buenas prácticas de codificación una vez el código hace lo que queremos que haga (Tarea 4)
-
-Veamos:
-
-![Ciclo de desarrollo basado en TDD](/workshop/CicloTDD.png "Ciclo TDD")
-
-<!-- <img src="CicloTDD.png" width="600"> -->
-
-<p style="color:#51D6FF; font-weight:bold; text-align:center">Una vez realizado el refactoring, es importante <span style="text-decoration:underline">antes de escribir nuevo código</span>, ejecutar nuevamente las <span style="text-decoration:underline">pruebas</span> y todas deben estar <span style="text-decoration:underline">en verde</span></p>
-
-1. Crear el mínimo código posible que solucione el error en la prueba
-
-    **Quick fix:** `ctrl+.` ó `hover` sobre el error en la prueba y click en `Quick Fix...`
-
-    Solución rápida\
-    ![Solución rápida](/workshop/QuickFix.png "Quick Fix")
-
-    Resultado de solución VSCode\
-    ![Resultado de solución VSCode](/workshop/ResultadoQuickFix.png "Resultado Quick Fix")
-
-2. Correr las pruebas y validar si la prueba ya pasa (Verde)
-
-    `npm run test`\
-    ![Resultado de solución VSCode](/workshop/ResultadoPruebasFnNotImpl.png "Resultado Quick Fix")
-
-3. Corregir método `add` cambiando el `throw` por un `return` con el resultado esperado
+1. Trabajemos con POO, y modifiquemos nuestra función `add` por un método de la clase `Claudiolator`
 
     ```javascript
-    function add(arg0: string, arg1: string): any {
-    	return "II";
+    test("sumar I y I", () => {
+    	expect(new Claudiolator().add("I", "I")).toBe("II");
+    });
+
+    class Claudiolator {
+    	add(arg0: string, arg1: string): any {
+    		return "II";
+    	}
     }
     ```
 
-4. Correr las pruebas y validar que la prueba, <span style="color:#13D162; font-style:italic">ya pasa</span>
+2. Validemos que no se haya roto nada. <span style="color:#13D162; font-style:italic">¿Seguimos en Verde?</span>
 
-    `npm run test`\
-    ![Resultado verde](/workshop/ResultadoPruebasVerde.png "Resultado Pruebas Verde")
+    `npm run test`
 
-5. Antes de pasar a la siguiente tarea, pensemos...
-    - **¿Que cosas no están tan bien, a pesar que ya pasa la prueba?**\
-       Tener en cuenta que
-        - Todavía no pensamos la siguiente prueba
-        - En todo momento debemos enfocarnos en lo realmente importante y no sobre diseñar
-        - No se debe crear código nuevo, porque no hay una prueba que falle
+3. Cuántas responsabilidades tenemos en `add.spec.ts`?
 
-**[Siguiente Tarea](../../../../tree/workshop-detail/4/workshop)**
+    Separemos responsabilidades
+
+    - Creemos el archivo `claudiolator.ts` y movamos la clase de archivo
+    - Importemos la clase `Claudiolator` en `add.spec.ts`
+    - Ejecutemos nuevamente nuestros tests y validemos que <span style="color:#13D162">siga en verde</span>
+
+4. Apliquemos el patron AAA en nuestra prueba
+
+    ```javascript
+    test("sumar I y I", () => {
+    	// Arrange
+    	const claudiolator = new Claudiolator();
+    	// Act
+    	const result = claudiolator.add("I", "I");
+    	// Assert
+    	expect(result).toBe("II");
+    });
+    ```
+
+5. ¿Podemos mejorar un poco más?
+    - **Recordemos procurar no sobrediseñar**
+
+**[Siguiente Tarea](../../../../tree/workshop-detail/5/workshop)**
 
 [Ceiba Software House S.A.S. © 2016](https://www.ceiba.com.co/)
 
