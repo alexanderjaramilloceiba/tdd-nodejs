@@ -3,9 +3,24 @@ import { DecimalConverter } from "../../src/modules/claudiolator/domain/model/de
 
 describe(Claudiolator.name, () => {
 	let claudiolator: Claudiolator;
+
 	let decimalConverter: DecimalConverter<string>;
+
 	beforeEach(() => {
-		// Jest will wait for this promise to resolve before running tests.
+		decimalConverter = {
+			from: (romanNumeral: string): number =>
+				({
+					["I"]: 1,
+					["II"]: 2,
+				}[romanNumeral] || 0),
+			to: (decimal: number): string =>
+				({
+					[2]: "II",
+					[3]: "III",
+					[4]: "IV",
+				}[decimal] || ""),
+		};
+
 		claudiolator = new Claudiolator(decimalConverter);
 	});
 
