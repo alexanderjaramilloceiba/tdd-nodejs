@@ -17,3 +17,12 @@ test("sumar I y II", () => {
 	// Assert
 	expect(result).toBe("III");
 });
+
+test("sumar II y II", () => {
+	// Arrange
+	const claudiolator = new Claudiolator();
+	// Act
+	const result = claudiolator.add("II", "II");
+	// Assert
+	expect(result).toBe("IV");
+});
