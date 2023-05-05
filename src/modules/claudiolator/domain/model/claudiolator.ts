@@ -1,6 +1,6 @@
 export class Claudiolator {
-	add(arg0: string, arg1: string): any {
-		if (arg0 == "I" && arg1 == "I") {
+	add(romanNumeral1: string, romanNumeral2: string): any {
+		if (romanNumeral1 == "I" && romanNumeral2 == "I") {
 			return "II";
 		}
 		return "III";
