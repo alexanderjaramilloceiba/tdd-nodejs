@@ -71,7 +71,7 @@ Veamos:
         - En todo momento debemos enfocarnos en lo realmente importante y no sobre diseñar
         - No se debe crear código nuevo, porque no hay una prueba que falle
 
-[Siguiente Tarea](https://github.com/alexanderjaramilloceiba/tdd-nodejs/tree/workshop-detail/4/workshop)
+**[Siguiente Tarea](../../tree/workshop-detail/4/workshop)**
 
 [Ceiba Software House S.A.S. © 2016](https://www.ceiba.com.co/)
 
