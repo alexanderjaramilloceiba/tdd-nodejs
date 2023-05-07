@@ -1,5 +1,5 @@
 {
-	"name": "unitarias-nodejs",
+	"name": "tdd-nodejs",
 	"version": "1.0.0",
 	"description": "## express + jest",
 	"main": "index.js",

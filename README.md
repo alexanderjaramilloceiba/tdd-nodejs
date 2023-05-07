@@ -1,26 +1,7 @@
-# pruebas unitarias
+# TDD
 
-## express + jest
+[Volver al menú principal](../../../tree/workshop)
 
-crear un proyecto desde cero
+[Ceiba Software House S.A.S. © 2016](https://www.ceiba.com.co/)
 
-    npm init -y
-    npm i express --save
-
-    npm i typescript ts-node nodemon -D
-    npm i @types/node @types/express -D
-
-    npm run tsc -- --init
-
-librería de pruebas jest
-
-    npm i jest ts-jest -D
-    npm i @types/jest -D
-
-    npm run ts-jest config:init
-    # o #npx ts-jest config:init
-
-## iniciar proyecto
-
-    npm i
-    npm start
+Certified Scrum Developer Course, Lab Guide
