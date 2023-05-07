@@ -8,7 +8,7 @@ Recordemos que una regla, nos dice que no debemos escribir código para producci
 1. ¿Cuál sería un siguiente test? (hagamos que falle)
 
     ```javascript
-    test("sumar II y II"...
+    test("sumar I y II"...
     ```
 
     ![Resultado Rojo Test 2](/workshop/2-SegundoTestQueFalle.png "Resultado Pruebas Rojo")
