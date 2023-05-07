@@ -18,6 +18,10 @@ Habrá quizá muchas otras pero las 3 reglas de [Robert C. Martin](http://butunc
 
 > No escribirás más código del necesario para hacer pasar el test.
 
+Siempre piensa en **QUE** se necesita\
+Luego elabora planes para para llevarlo a cabo (el **COMO**)\
+Y como valor agregado con TDD la prueba ya queda escrita y será sumada a las demás pruebas y estas serán ejecutadas, en forma de regresión, cada vez que queramos hacer una compilación
+
 ## Tarea 3: Pasemos de rojo (RED) a verde (GREEN)
 
 Seleccionado el criterio de aceptación más simple que se pueda y traducido a una prueba unitaria, debemos comprobar que la prueba falle, de lo contrario, hay que sobreescribir la prueba
