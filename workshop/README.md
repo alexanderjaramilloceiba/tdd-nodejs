@@ -4,10 +4,6 @@
 
 TDD o Desarrollo dirigido por pruebas es un método en el desarrollo de software que entrelaza las pruebas unitarias, la programación y la refactorización.
 
-Con TDD la prueba ya queda escrita y será sumada a las demás pruebas y estas serán ejecutadas, en forma de regresión, cada vez que queramos hacer una compilación.
-
-Las pruebas resultantes son una muy buena fuente para entender el código incluso mejor que cualquier documentación.
-
 ## Las 3 reglas del TDD
 
 Habrá quizá muchas otras pero las 3 reglas de [Robert C. Martin](http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd) son bastante buenas para saber cómo va ese TDD. Y son estas:
@@ -21,6 +17,8 @@ Habrá quizá muchas otras pero las 3 reglas de [Robert C. Martin](http://butunc
 Siempre piensa en **QUE** se necesita\
 Luego elabora planes para para llevarlo a cabo (el **COMO**)\
 Y como valor agregado con TDD la prueba ya queda escrita y será sumada a las demás pruebas y estas serán ejecutadas, en forma de regresión, cada vez que queramos hacer una compilación
+
+Las pruebas resultantes son una muy buena fuente para entender el código incluso mejor que cualquier **documentación**.
 
 ## Tarea 3: Pasemos de rojo (RED) a verde (GREEN)
 
