@@ -6,7 +6,7 @@ Comentamos que las pruebas unitarias que tienen dependencias, debemos en la prep
 la prueba crear un mock que podamos manipular a nuestro antojo, controlando qué devuelve en cada escenario elegido, permitiendo así, solo probar nuestra unidad de código (método `add`
 de la clase `Claudiolator`).
 
-1.  En vista que necesitamos convertir romanos a decimales y decimales a romanos, vemos nacer una nueva responsabilidad, la cual por el principio `I` de `S.O.L.I.D.` podemos inyectar la dependencia, algo así:
+1.  En vista que necesitamos convertir romanos a decimales y decimales a romanos, vemos nacer una nueva responsabilidad, la cual por el principio `D` de `S.O.L.I.D.` podemos inyectar la dependencia, algo así:
 
     ```javascript
     let decimalConverter: DecimalConverter<string>;
@@ -83,6 +83,8 @@ de la clase `Claudiolator`).
     	claudiolator = new Claudiolator(decimalConverter);
     });
     ```
+
+    -   Corramos nuevamente las pruebas y validemos que siga en verde
 
     **[Siguiente Tarea](../../../../tree/workshop-detail/8/workshop)**
 
